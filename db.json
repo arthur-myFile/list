@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "julie@yahoo.com",
+      "passeord": "123456"
+    },
+    {
+      "email": "satyam@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "recipes": [
+    {
+      "name": "palak panner By raghab chadha",
+      "description": "Deepka padukon",
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Recipe Book</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a routerLink="/recipes">Recipes</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a routerLink="/auth">Authenticate</a>
+        </li>
+        <li routerLinkActive="active"  *ngIf="isAuthenticated">
+          <a routerLink="/shopping-list">Shopping List</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuthenticated">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
