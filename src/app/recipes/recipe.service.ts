@@ -51,7 +51,8 @@ export class RecipeService {
     }
 
     getRecipe(index: number) {
-        return this.recipes[index];
+        // return this.recipes[index];
+        return this.httpClient.get(environment.HOST_URL + `/recipes/${index}`,);
     }
 
     addRecipe(payload : any) {

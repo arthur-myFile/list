@@ -27,6 +27,7 @@ export class AuthComponent implements OnDestroy {
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
+    
   }
 
   onSubmit(form: NgForm) {
@@ -47,20 +48,24 @@ export class AuthComponent implements OnDestroy {
 
     authObs.subscribe({
       next : (users : any)=>{
-        if(users.length){
-          let userFound : boolean = false;
-          users.forEach((user : any) => {
-            if(user.email === email && user.password === password){
-              this.authService.setItemInSessionStorage(user)
-              this.router.navigate(['/recipes']);
-              userFound = true;
+        if(this.isLoginMode){
+          if(users.length){
+            let userFound : boolean = false;
+            users.forEach((user : any) => {
+              if(user.email === email && user.password === password){
+                this.authService.setItemInSessionStorage(user)
+                this.router.navigate(['/recipes']);
+                userFound = true;
+              }
+            });
+            if(userFound === false){
+              alert('error!Invalid credentials')
             }
-          });
-          if(userFound === false){
-            alert('error!Invalid credentials')
+          }else{
+            alert('please register first');
           }
-        }else{
-          alert('please register first');
+        }else {
+          this.router.navigate(['/recipes']);
         }
       },error : (err:any)=>{
 

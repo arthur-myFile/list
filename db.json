@@ -9,6 +9,16 @@
       "email": "satyam@gmail.com",
       "password": "123456",
       "id": 2
+    },
+    {
+      "email": "nishant@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "nishant_1@gmail.com",
+      "password": "123456",
+      "id": 4
     }
   ],
   "recipes": [
@@ -16,6 +26,41 @@
       "name": "palak panner By raghab chadha",
       "description": "Deepka padukon",
       "id": 1
+    },
+    {
+      "name": "Shahi Paneer",
+      "description": "Made by rohit sonker for better taste",
+      "id": 2
+    },
+    {
+      "name": "testing 1",
+      "description": "tejsjkfhkjjbajgjdbjkvjkhuiangd",
+      "ingredients": [
+        {
+          "name": "afsjhsfjdhqhasu",
+          "amount": 787
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "testin",
+      "description": "fasnfjkajfansd",
+      "ingredients": [
+        {
+          "name": "jsfdsdkalkfnsdlkl",
+          "amount": 99
+        },
+        {
+          "name": "dfdfdnsjkahfkjad",
+          "amount": 8878
+        },
+        {
+          "name": "hdfdjfdsahjkhfskd",
+          "amount": 787878
+        }
+      ],
+      "id": 4
     }
   ]
 }

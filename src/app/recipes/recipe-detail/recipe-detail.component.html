@@ -1,43 +1,13 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" />
-  </div>
+<div>
+  <h1>{{recipe?.description}}</h1>
 </div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{recipe.name}}</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group" appDropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle">
-        Manage Recipe <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-        <li><a (click)="onEditRecipe()" style="cursor: pointer;">Edit Recipe</a></li>
-        <li><a (click)="onDeleteRecipe()" style="cursor: pointer;">Delete Recipe</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="row" style="margin: 0.5em;">
-  <div [innerHTML]="recipe.description"></div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
-        <span class="badge">{{ingredient.amount}}</span>
-        {{ingredient.name}}
-      </li>
-    </ul>
-  </div>
+<div *ngIf="recipe?.ingredients && recipe?.ingredients.length">
+  <p style="font-size: 18px;font-weight: 700;">Indredients : </p>
+  <table width="50%">
+    <tr *ngFor="let x of recipe?.ingredients">
+      <td style="text-align: left; font-weight: 600;font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{x?.name}}</td>
+      <td style="text-align: right; font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;color: #e985e9;"> {{x?.amount}}</td>
+    </tr>
+  </table>
 </div>

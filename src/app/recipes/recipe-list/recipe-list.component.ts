@@ -12,6 +12,7 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: any[];
+  displayRecipesList:any[]=[];
   subscribtion: Subscription;
   recipeName: string = '';
   p: number = 1;
@@ -24,7 +25,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscribtion = this.recipeService.getRecipesList().subscribe({
       next : (recipes : any)=>{
-        this.recipes = recipes
+        this.recipes = recipes;
+        this.displayRecipesList = recipes
       }
     })
   }
@@ -34,16 +36,15 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   }
 
   onSearch() {
-    this.p = 1;
+    // this.p = 1;
+    debugger
     if (this.recipeName == '')  {
-      this.recipes = this.recipeService.getRecipes();
-      this.searchIndexes = [];
+      this.displayRecipesList = this.recipes;
       return;
     }
-
     else {
-     this.recipes = this.recipes.filter(recipe => recipe.name.toLowerCase().includes(this.recipeName.toLowerCase()));
-     this.searchIndexes = this.findIndexes(this.recipes);
+    this.displayRecipesList  = this.recipes.filter(recipe => recipe.name.toLowerCase().includes(this.recipeName.toLowerCase()));
+    //  this.searchIndexes = this.findIndexes(this.recipes);
     }
   }
 

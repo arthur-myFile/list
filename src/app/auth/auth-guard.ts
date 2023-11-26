@@ -20,10 +20,13 @@ export class AuthGuard implements CanActivate {
     //         }
     //     )),
     // );
-    debugger
+    
     if(sessionStorage.getItem('user')){
       return true
-    }else return false
+    }else {
+      this.router.navigate['/auth'];
+      return false;
+    }
 
   }
 
