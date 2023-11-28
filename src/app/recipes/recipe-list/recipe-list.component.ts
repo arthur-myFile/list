@@ -63,4 +63,20 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   pageChanged(event: any): void {
     this.p = event;
   }
+  selectedDropDownMenu : string = 'All';
+
+  filterItem(filterType:string){
+    this.selectedDropDownMenu = filterType;
+    debugger
+    if(filterType === 'All') {
+      this.displayRecipesList = this.recipes;
+    }else{
+      this.displayRecipesList = this.recipes.filter((recipe:any)=>{
+        if(recipe.category){
+          return recipe.category.includes(filterType);
+        }else return false;
+      })
+    }
+    console.log(this.displayRecipesList)
+  }
 }
