@@ -6,6 +6,7 @@
 >
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-text">{{ description }}</p>
+    <span *ngIf="recipe?.description" style="font-size: 16px; font-weight: 600;">Description :: </span><p class="list-group-item-text">{{ recipe?.description }}</p>
+    <span *ngIf="recipe?.category" style="font-size: 16px; font-weight: 600;">category :: </span> <p class="list-group-item-text">{{ recipe?.category }}</p>
   </div>
 </a>

@@ -37,7 +37,8 @@ export class RecipeEditComponent implements OnInit {
       const body = {
         name : this.recipeForm.controls['name'].value,
         description : this.recipeForm.controls['description'].value,
-        ingredients : this.ingredientsFormArray.getRawValue()
+        ingredients : this.ingredientsFormArray.getRawValue(),
+        category : this.recipeForm.controls['category'].value
       }
       this.recipeService.addRecipe(body).subscribe({
         next : (res:any)=>{
@@ -83,6 +84,7 @@ export class RecipeEditComponent implements OnInit {
     this.recipeForm = new FormGroup({
       name: new FormControl(recipeName, Validators.required),
       description: new FormControl(recipeDescription, Validators.required),
+      category : new FormControl(null, Validators.required),
       ingredients: recipeIngredients,
     });
   }

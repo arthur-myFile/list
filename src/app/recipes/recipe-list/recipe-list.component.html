@@ -1,14 +1,26 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12">
     <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
-    <!-- <input class="form-control" type="text" name="recipeName" [(ngModel)] = "recipeName" (ngModelChange)="onSearch()" style="margin-top: 2em;"> -->
+    <input class="form-control" type="text" name="recipeName" [(ngModel)] = "recipeName" (ngModelChange)="onSearch()" style="margin-top: 2em;">
   </div>
 </div>
-<hr />
+<hr /> -->
+<div class="dropdown mb-5">
+  <button class="btn btn-primary dropdown-toggle ul-custom-dropdown" type="button" data-toggle="dropdown">{{selectedDropDownMenu}}
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li class="li-menu" (click)="filterItem('All')">All</li>
+    <li class="li-menu" (click)="filterItem('Breakfast')">Breakfast</li>
+    <li class="li-menu" (click)="filterItem('Desert')">Desert</li>
+    <li class="li-menu" (click)="filterItem('Snacks')">Snacks</li>
+    <li class="li-menu" (click)="filterItem('Main Course')">Main Course</li>
+  </ul>
+</div>
+<hr>
 
 <div class="row">
   <div class="col-xs-12">
-    <app-recipe-item *ngFor="let recipeEl of displayRecipesList let i=index;" [recipe]="recipeEl" [index]="i-(-1)"> </app-recipe-item>
+    <app-recipe-item *ngFor="let recipeEl of displayRecipesList let i=index;" [recipe]="recipeEl" [index]="recipeEl.id"> </app-recipe-item>
   </div>
 </div>
 

@@ -56,6 +56,7 @@ export class AuthComponent implements OnDestroy {
                 this.authService.setItemInSessionStorage(user)
                 this.router.navigate(['/recipes']);
                 userFound = true;
+                this.authService.user.next(user)
               }
             });
             if(userFound === false){

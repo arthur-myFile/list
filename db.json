@@ -45,7 +45,7 @@
     },
     {
       "name": "testin",
-      "description": "fasnfjkajfansd",
+      "description": "kajhkjhfakjhjkahjkfdkjhjdsjgbjkhjksdjkfhshgjsjkgh sjkdnhfa vhkgbs bgkvjfhaui lorem",
       "ingredients": [
         {
           "name": "jsfdsdkalkfnsdlkl",
@@ -61,6 +61,13 @@
         }
       ],
       "id": 4
+    },
+    {
+      "name": "sunny",
+      "description": "rafdasfasfsaafsdafasfdsafsddfasfassfadf",
+      "ingredients": [],
+      "category": "Snacks",
+      "id": 8
     }
   ]
 }

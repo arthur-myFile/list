@@ -3,12 +3,6 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
-          <button [disabled]="!recipeForm.valid" type="submit" class="btn btn-primary">Save</button>
-          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -18,6 +12,20 @@
               formControlName="name"
               placeholder="Name"
             />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name" style="margin-right: 1rem;">Category</label>
+            <select class="form-select" aria-label="category" formControlName="category" style="outline: none; padding: 10px; border-radius: 10px;">
+              <option style="padding: 8px;border-bottom: 0.5px solid #000;" value="null">Open this select menu</option>
+              <option style="padding: 8px;border-bottom: 0.5px solid #000;"value="Breakfast">Breakfast</option>
+              <option style="padding: 8px;border-bottom: 0.5px solid #000;"value="Snacks">Snacks</option>
+              <option style="padding: 8px;border-bottom: 0.5px solid #000;"value="Main Course">Main Course</option>
+              <option style="padding: 8px;border-bottom: 0.5px solid #000;"value="Desert">Desert</option>
+            </select>
           </div>
         </div>
       </div>
@@ -62,6 +70,12 @@
                 </button>
               </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button [disabled]="!recipeForm.valid" type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
     </form>

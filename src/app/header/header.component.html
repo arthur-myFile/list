@@ -15,6 +15,9 @@
         <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/recipes">Recipes</a>
         </li>
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a routerLink="/add/new-recipes">New Recipe</a>
+        </li>
         <li routerLinkActive="active" *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
